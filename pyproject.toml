@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spotify-music-clustering"
+description = "Unsupervised analysis of acoustic similarity in Spotify tracks."
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "numpy>=1.26,<3",
+    "pandas>=2.1,<4",
+    "scikit-learn>=1.4,<2",
+    "matplotlib>=3.8,<4",
+    "PyYAML>=6.0,<7",
+]
+keywords = ["clustering", "machine-learning", "music", "spotify", "unsupervised-learning"]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Typing :: Typed",
+]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0,<10",
+    "ruff>=0.6,<1",
+    "build>=1.2,<2",
+]
+
+[project.scripts]
+spotify-cluster = "spotify_music_clustering.app:main"
+
+[project.urls]
+Repository = "https://github.com/minhqng/spotify-music-clustering"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.dynamic]
+version = { attr = "spotify_music_clustering.__version__" }
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+addopts = "-ra --strict-markers --strict-config"
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["B", "C4", "E", "F", "I", "N", "RUF", "SIM", "UP", "W"]
+
+[tool.ruff.format]
+quote-style = "double"

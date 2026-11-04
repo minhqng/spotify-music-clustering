@@ -1,0 +1,59 @@
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.python
+
+# Build and packaging output
+build/
+dist/
+wheels/
+*.egg-info/
+*.egg
+.eggs/
+
+# Tool caches and test reports
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+junit*.xml
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+configs/local*.yaml
+
+# Research data: the Kaggle dataset is downloaded locally, never committed
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Generated experiment outputs, figures, metrics, and models
+artifacts/*
+!artifacts/.gitkeep
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE and operating-system files
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
