@@ -1,5 +1,7 @@
 # Spotify Music Clustering
 
+[![CI](https://github.com/minhqng/spotify-music-clustering/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/minhqng/spotify-music-clustering/actions/workflows/ci.yml)
+
 A Python project for exploring acoustic similarity among Spotify tracks with
 unsupervised learning. The repository currently provides the engineering
 foundation — packaging, environment setup, tests, linting, and CI — for a
